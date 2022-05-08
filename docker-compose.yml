@@ -7,7 +7,7 @@ services:
       - frontend
     ports: 
       - 80:80
-    command:  thttpd -D -h 0.0.0.0 -p 80 -d /home/static -u static -l - -M 60
+    command:  /thttpd -D -h 0.0.0.0 -p 80 -d /home/static -u static -l - -M 60
 
 networks:
   frontend:
