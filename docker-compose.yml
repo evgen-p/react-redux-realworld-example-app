@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  static_web:
+    build: .
+    networks:
+      - frontend
+    ports: 
+      - 80:80
+    command:  /thttpd -D -h 0.0.0.0 -p 80 -d /home/static -u static -l - -M 60
+
+networks:
+  frontend:
+    driver: bridge
